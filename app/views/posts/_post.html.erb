@@ -1,0 +1,43 @@
+<div id="<%= dom_id post %>">
+  <p>
+  <strong><%= t(:title) %>:</strong>
+  <%= post.title %>
+  </p>
+
+  <p>
+  <strong><%= t(:content) %>:</strong>
+  <%= post.content %>
+  </p>
+
+</div>
+
+
+<div class="container">
+  <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-6">
+      <div id="<%= dom_id post %>">
+        <p>
+        <strong><%= t(:title) %>:</strong>
+        <%= post.title %>
+        </p>
+
+        <p>
+        <strong><%= t(:content) %>:</strong>
+        <%= post.content %>
+        </p>
+
+      </div>
+
+      <!-- Your content here -->
+      <div class="card">
+        <div class="card-body">
+          <%= render "form", post: @post %>
+          <br>
+          <!-- Content within the centered div -->
+        </div>
+      </div>
+
+      <%= link_to t(:posts_back_to), posts_path %>
+    </div>
+  </div>
+</div>

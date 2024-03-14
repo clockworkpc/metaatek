@@ -1,0 +1,12 @@
+
+@font-face {
+  font-family: sans-paleo-hebrew;
+  src: url('paleo-hebrew.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.paleo-hebrew {
+  font-family: sans-paleo-hebrew;
+  direction: rtl
+}

@@ -1,0 +1,10 @@
+<h1>Editing post</h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div>
+  <%= link_to t(:post_show), @post %> |
+  <%= link_to t(:posts_back_to), posts_path %>
+</div>

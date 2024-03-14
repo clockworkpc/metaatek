@@ -1,0 +1,15 @@
+<html lang="en" dir="rtl">
+
+<p style="color: green"><%= notice %></p>
+
+<div class="text-right">
+  <%= render @post %>
+</div>
+
+<div>
+  <%= link_to t(:post_edit), edit_post_path(@post) %> |
+  <%= link_to t(:posts_back_to), posts_path %>
+
+  <%= button_to t(:post_destroy), @post, method: :delete %>
+</div>
+</html>

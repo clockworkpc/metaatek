@@ -1,0 +1,55 @@
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
+en:
+  hello: "Hello world"
+  title: "Title"
+  content: "Content"
+  post: "Post"
+  post_update: "Update Post"
+  post_show: "Show this post"
+  posts_back_to: "Back to Posts"
+  post_new: "New Post"
+  posts_all: "All Posts"
+  post_edit: "Edit this post"
+  post_destroy: "Destroy this post"
+
+
+he:
+  hello: "שלום עולם"
+  title: "כותרת"
+  content: "תוכן"
+  post: "רשומה"
+  post_update: "עדכן את הרשומה הזאת"
+  post_show: "הצג את הרשומה הזאת"
+  posts_back_to: "חזרה לרשומות"
+  post_new: "רשומה חדשה"
+  posts_all: "כל רשומותיי"
+  post_edit: "ערוך את הרשומה הזאת"
+  post_destroy: "השמד את הערוכה הזאת"
