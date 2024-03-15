@@ -4,7 +4,8 @@
 
 <div class="container">
   <h1><%= t(:posts_all) %></h1>
-  <%= link_to t(:post_new), new_post_path %>
+  <%= link_to t(:post_new), new_post_path, class: "btn btn-primary" %>
+ <hr class="my-4"> 
 
   <div class="row">
     <% @posts.each do |post| %>

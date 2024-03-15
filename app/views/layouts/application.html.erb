@@ -12,7 +12,16 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body dir="rtl">
+  <% text_direction = I18n.locale == :he ? 'rtl' : 'ltr' %>
+  <body dir="<%= text_direction %>">
+    <p class="notice"><%#= notice %></p>
+    <p class="alert"><%#= alert %></p>
+
     <%= yield %>
   </body>
+  <footer>
+    <!-- Logout button -->
+    <%= render 'shared/logout' %>
+
+  </footer>
 </html>

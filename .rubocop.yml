@@ -1,0 +1,22 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'config/routes.rb'
+  SuggestExtensions: false
+
+Lint:
+  Exclude:
+    - 'app/views/**/*.html.erb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/controllers/*'
+    - 'app/models/*'
+
+Rails:
+  Enabled: true
