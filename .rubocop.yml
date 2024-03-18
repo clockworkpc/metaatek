@@ -20,3 +20,9 @@ Metrics/MethodLength:
 
 Rails:
   Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

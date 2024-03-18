@@ -17,7 +17,7 @@ module Metaatek
     config.autoload_lib(ignore: %w[assets tasks])
 
     # config.i18n.default_locale = :en
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :he
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
