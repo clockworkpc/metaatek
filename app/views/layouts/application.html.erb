@@ -12,16 +12,26 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <%= render partial: 'shared/navbar' %>
+
+  <div class='container'>
+    <%#= render 'layouts/header' %>
+  </div>
   <% text_direction = I18n.locale == :he ? 'rtl' : 'ltr' %>
   <body dir="<%= text_direction %>">
     <p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p>
 
+    <div class="container">
+    </div>
+
     <%= yield %>
   </body>
   <footer>
     <!-- Logout button -->
-    <%= render 'shared/logout' %>
+    <div class="container">
+      <%= render 'shared/logout' %>
+    </div>
 
   </footer>
 </html>
