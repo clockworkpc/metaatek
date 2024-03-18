@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get 'change_locale/:locale', to: 'application#change_locale', as: :change_locale
 
   # Defines the root path route ("/")
-  # root "posts#index"
-  root 'welcome#index'
+  root "posts#index"
+  # root 'welcome#index'
 end
