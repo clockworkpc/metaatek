@@ -1,26 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<!-- app/views/posts/index.html.erb -->
+<h1>Posts</h1>
 
-<div class="container">
-  <h1><%= t(:posts_all) %></h1>
-  <%= link_to t(:post_new), new_post_path, class: "btn btn-primary" %>
- <hr class="my-4"> 
-
-  <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="text-right card-body">
-            <h5 class="card-title"><span class="paleo-hebrew"><%= post.title %> | </span><%= post.title %></h5>
-            <p class="paleo-hebrew"><%= post.content %></p>
-            <p><%= post.content %></p>
-            <%= link_to post.title, post_path(post) %>
-            <br>
-            <!-- Add other content here -->
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
 </div>
+
+<%= link_to "New post", new_post_path %>
