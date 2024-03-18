@@ -17,12 +17,12 @@
     <div class="col-md-6">
       <div id="<%= dom_id post %>">
         <p>
-        <strong><%= t(:title) %>:</strong>
+        <strong><%= t('post.title') %>:</strong>
         <%= post.title %>
         </p>
 
         <p>
-        <strong><%= t(:content) %>:</strong>
+        <strong><%= t('post.title') %>:</strong>
         <%= post.content %>
         </p>
 
@@ -31,13 +31,13 @@
       <!-- Your content here -->
       <div class="card">
         <div class="card-body">
-          <%= render "form", post: @post %>
+          <%= render "form", post: post %>
           <br>
           <!-- Content within the centered div -->
         </div>
       </div>
 
-      <%= link_to t(:posts_back_to), posts_path %>
+      <%= link_to t('post.back_to'), posts_path %>
     </div>
   </div>
 </div>
