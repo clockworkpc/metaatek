@@ -1,25 +1,10 @@
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
+    <%= t('navbar.language') %>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li><%= link_to 'Action', '#', class: 'dropdown-item' %></li>
-    <li><%= link_to 'Another action', '#', class: 'dropdown-item' %></li>
-    <li><%= link_to 'Something else here', '#', class: 'dropdown-item' %></li>
     <li><%= link_to "English", change_locale_path(locale: 'en') %></li>
     <li><%= link_to "עברית", change_locale_path(locale: 'he') %></li>
-  </ul>
-</div>
-
-<!-- app/views/your_controller/your_view.html.erb -->
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
   </ul>
 </div>
 

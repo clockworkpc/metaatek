@@ -156,3 +156,6 @@ he:
     show: "הצג את הרשומה הזאת"
     title: "כותרת"
     update: "עדכן את הרשומה הזאת"
+  navbar:
+    language: "שפה"
+    title: "מתעתק"

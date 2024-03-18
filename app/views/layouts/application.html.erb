@@ -14,9 +14,6 @@
 
   <%= render partial: 'shared/navbar' %>
 
-  <div class='container'>
-    <%#= render 'layouts/header' %>
-  </div>
   <% text_direction = I18n.locale == :he ? 'rtl' : 'ltr' %>
   <body dir="<%= text_direction %>">
     <p class="notice"><%#= notice %></p>

@@ -186,3 +186,6 @@ en:
     show: "Show this post"
     title: "Title"
     update: "Update Post"
+  navbar:
+    language: "Language"
+    title: "Metaätek"
