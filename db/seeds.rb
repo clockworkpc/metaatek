@@ -8,4 +8,22 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create!(email: 'admin@test.com', password: 'password123', password_confirmation: 'password123')
+def create_post(user:, filepath:)
+  lines = File.readlines(filepath)
+  title = lines.first
+  content = lines[1..].join("\n")
+  Post.create!(user:, title:, content:)
+end
+
+admin_user = User.create!(email: 'admin@metaatek.com', password: 'password123', password_confirmation: 'password123')
+
+test_user = User.create!(email: 'test@metaatek.com', password: 'password123', password_confirmation: 'password123')
+
+texts_dir = 'spec/fixtures/hebrew_texts'
+filepaths = Dir.glob("#{texts_dir}/*.txt")
+
+filepaths.each_with_index do |filepath, i|
+  create_post(user: admin_user, filepath:)
+  last_text = filepaths.count - 1 == i
+  create_post(user: test_user, filepath:) if last_text
+end
