@@ -21,12 +21,16 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
 # Install application gems
 COPY Gemfile* ./
 RUN gem install bundler && bundle install --jobs 20 --retry 5
-
 RUN gem install foreman
 
+# Ensure Bootstrap is installed and ready to go
 RUN bundle exec rails css:install:bootstrap
-
+RUN bundle exec rails assets:clobber
 RUN bundle exec rails assets:precompile
+
+# Copy credentials and keys into the Docker image
+# COPY config/credentials.yml.enc config/master.key config/
+
 
 COPY . /rails
 

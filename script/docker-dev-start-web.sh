@@ -2,6 +2,8 @@
 
 set -xeuo pipefail
 
+echo $RAILS_MASTER_KEY
+
 ./script/wait-for-tcp.sh db 5432
 ./script/wait-for-tcp.sh redis 6379
 

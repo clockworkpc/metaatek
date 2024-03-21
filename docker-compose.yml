@@ -39,6 +39,7 @@ services:
       DB_PASSWORD: postgres
       BUNDLE_GEMFILE: /rails/Gemfile
       SELENIUM_REMOTE_URL: http://chrome_server:4444/wd/hub
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
     command: script/docker-dev-start-web.sh
     networks:
       - backend
