@@ -15,9 +15,22 @@ def create_post(user:, filepath:)
   Post.create!(user:, title:, content:)
 end
 
-admin_user = User.create!(email: 'admin@metaatek.com', password: 'password123', password_confirmation: 'password123')
+admin_email = Rails.application.credentials[:admin][:email]
+admin_password = Rails.application.credentials[:admin][:password]
+test_email = Rails.application.credentials[:test][:email]
+test_password = Rails.application.credentials[:test][:password]
 
-test_user = User.create!(email: 'test@metaatek.com', password: 'password123', password_confirmation: 'password123')
+admin_user = User.create!(
+  email: admin_email,
+  password: admin_password,
+  password_confirmation: admin_password
+)
+
+test_user = User.create!(
+  email: test_email,
+  password: test_password,
+  password_confirmation: test_password
+)
 
 texts_dir = 'spec/fixtures/hebrew_texts'
 filepaths = Dir.glob("#{texts_dir}/*.txt")
