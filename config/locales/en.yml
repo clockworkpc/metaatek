@@ -176,7 +176,7 @@ en:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
   post:
-    all: "All Posts"
+    all: "Posts"
     back_to: "Back to Posts"
     content: "Content"
     destroy: "Destroy this post"

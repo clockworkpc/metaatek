@@ -1,0 +1,14 @@
+.truncate-after-5-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Fallback for non-WebKit browsers */
+  max-height: calc(1.5em * 10); /* Adjust based on line height and desired number of lines */
+  line-height: 1.2em; /* Adjust based on line height */
+}
+
+@media print {
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+}

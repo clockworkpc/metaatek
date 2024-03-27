@@ -28,6 +28,7 @@ services:
   app:
     build: .
     tty: true
+    stdin_open: true
     volumes:
       - .:/rails
     working_dir: /rails

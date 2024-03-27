@@ -3,16 +3,16 @@
 <div class="container">
   <h1><%= t('post.all') %></h1>
   <%= link_to t('post.new'), new_post_path, class: "btn btn-primary" %>
- <hr class="my-4"> 
+  <hr class="my-4"> 
 
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <div class="text-right card-body">
+      <div class="col-md-6">
+        <div class="card mb-3 no-page-break">
+          <div class="text-right card-body truncate-after-5-lines">
             <%= link_to post_path(post) do %>
-<h5 class="card-title"><span class="paleo-hebrew"><%= post.title %> | </span><%= post.title %></h5>
-              <% end %>
+              <h5 class="card-title"><span class="paleo-hebrew"><%= post.title %> | </span><%= post.title %></h5>
+            <% end %>
             <p class="paleo-hebrew"><%= post.content %></p>
             <br>
             <!-- Add other content here -->

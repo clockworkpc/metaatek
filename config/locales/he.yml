@@ -146,7 +146,7 @@ he:
         one: 'שגיאה אחת מנעה את ה%{resource} מלהישמר:'
         other: "%{count} שגיאות מנעו מ%{resource} מלהישמר:"
   post:
-    all: "כל רשומותיי"
+    all: "רשומות"
     back_to: "חזרה לרשומות"
     content: "תוכן"
     destroy: "השמד את הערוכה הזאת"
