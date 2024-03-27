@@ -15,10 +15,15 @@ def create_post(user:, filepath:)
   Post.create!(user:, title:, content:)
 end
 
-admin_email = Rails.application.credentials[:admin][:email]
-admin_password = Rails.application.credentials[:admin][:password]
-test_email = Rails.application.credentials[:test][:email]
-test_password = Rails.application.credentials[:test][:password]
+def user_credentials(type:, env:)
+  env = env.to_sym
+  email = Rails.application.credentials[env][type][:email]
+  password = Rails.application.credentials[env][type][:password]
+  [email, password]
+end
+
+admin_email, admin_password = user_credentials(type: :admin, env: Rails.env)
+test_email, test_password = user_credentials(type: :test, env: Rails.env)
 
 begin
   admin_user = User.create!(
