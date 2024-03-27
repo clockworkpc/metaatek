@@ -20,23 +20,29 @@ admin_password = Rails.application.credentials[:admin][:password]
 test_email = Rails.application.credentials[:test][:email]
 test_password = Rails.application.credentials[:test][:password]
 
-admin_user = User.create!(
-  email: admin_email,
-  password: admin_password,
-  password_confirmation: admin_password
-)
+begin
+  admin_user = User.create!(
+    email: admin_email,
+    password: admin_password,
+    password_confirmation: admin_password
+  )
 
-test_user = User.create!(
-  email: test_email,
-  password: test_password,
-  password_confirmation: test_password
-)
+  test_user = User.create!(
+    email: test_email,
+    password: test_password,
+    password_confirmation: test_password
+  )
+rescue StandardError => e
+  Rails.logger.info("User already created: #{e}")
+end
 
-texts_dir = 'spec/fixtures/hebrew_texts'
-filepaths = Dir.glob("#{texts_dir}/*.txt")
+if Post.count.zero?
+  texts_dir = 'spec/fixtures/hebrew_texts'
+  filepaths = Dir.glob("#{texts_dir}/*.txt")
 
-filepaths.each_with_index do |filepath, i|
-  create_post(user: admin_user, filepath:)
-  last_text = filepaths.count - 1 == i
-  create_post(user: test_user, filepath:) if last_text
+  filepaths.each_with_index do |filepath, i|
+    create_post(user: admin_user, filepath:)
+    last_text = filepaths.count - 1 == i
+    create_post(user: test_user, filepath:) if last_text
+  end
 end

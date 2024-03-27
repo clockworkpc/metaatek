@@ -7,7 +7,7 @@ WORKDIR /rails
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential curl git libvips pkg-config python-is-python3 neovim nano
+    apt-get install --no-install-recommends -y build-essential curl git libvips pkg-config python-is-python3 neovim nano libpq-dev
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=18.3.0
