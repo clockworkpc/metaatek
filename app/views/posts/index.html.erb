@@ -1,5 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
+<style>
+  .card-body {
+    max-height: calc(10 * 1.5em); /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+</style>
+
 <div class="container">
   <h1><%= t('post.all') %></h1>
   <%= link_to t('post.new'), new_post_path, class: "btn btn-primary" %>
@@ -8,17 +20,40 @@
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-md-6">
-        <div class="card mb-3 no-page-break">
-          <div class="text-right card-body truncate-after-5-lines">
-            <%= link_to post_path(post) do %>
-              <h5 class="card-title"><span class="paleo-hebrew"><%= post.title %> | </span><%= post.title %></h5>
-            <% end %>
-            <p class="paleo-hebrew"><%= post.content %></p>
-            <br>
-            <!-- Add other content here -->
+        <a href="<%= post_path(post) %>" class="card-link">
+          <div class="card mb-3 no-page-break">
+            <div class="text-right card-body">
+              <%= link_to post_path(post) do %>
+                <h5 class="card-title"><span><%= post.title %></h5>
+              <% end %>
+              <p id="post_content_<%= post.id %>" class="paleo-hebrew"><%= post.content %></p>
+              <br>
+              <!-- Add other content here -->
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     <% end %>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var cardBodies = document.querySelectorAll('.card-body');
+
+    cardBodies.forEach(function(cardBody) {
+      var content = cardBody.querySelector('.paleo-hebrew');
+      var lineHeight = parseFloat(window.getComputedStyle(content).lineHeight);
+      console.log("Line Height: " + lineHeight);
+      var maxHeight = 5 * lineHeight; // Assuming 5 lines, adjust as needed
+
+      if (content.scrollHeight > maxHeight) {
+        content.classList.add('truncate-after-5-lines');
+        // Calculate the approximate number of characters that fit into 5 lines
+        var approxCharsPerLine = Math.floor(content.clientWidth / (lineHeight / 2));
+        // Trim the text to fit 5 lines
+        content.textContent = content.textContent.slice(0, approxCharsPerLine * 5) + '...';
+      }
+    });
+  });
+</script>

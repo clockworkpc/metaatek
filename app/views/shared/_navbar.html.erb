@@ -1,30 +1,24 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><%= t('navbar.title') %></a>
+    <a class="navbar-brand" href=<%= root_path %>><%= t('navbar.title') %></a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="dropdown">
+    <div class="collapse navbar-collapse justify-content-sm-start" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 mt-3">
+        <li class="nav-item mb-3 dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <%= t('navbar.language') %>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><%= link_to "English", change_locale_path(locale: 'en') %></li>
-            <li><%= link_to "עברית", change_locale_path(locale: 'he') %></li>
+            <li><button class="dropdown-item"><%= link_to "<span class='fi fi-gb'></span> English".html_safe, change_locale_path(locale: 'en') %></button></li>
+            <li><button class="dropdown-item"><%= link_to "<span class='fi fi-il'></span> עברית".html_safe, change_locale_path(locale: 'he') %></button></li>
           </ul>
         </li>
-      <li>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-
-      </li>
-
       </ul>
     </div>
+
   </div>
 </nav>
