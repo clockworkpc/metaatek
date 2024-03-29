@@ -1,11 +1,20 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row justify-content-center" style="min-height: 100vh;">
 
-<%= render @post %>
+    <%= render @post %>
 
-<div>
-  <%= link_to t('post.edit'), edit_post_path(@post) %> |
-  <%= link_to t('post.back_to'), posts_path %>
+    <div>
 
-  <%= button_to t('post.delete'), @post, method: :delete %>
 
+      <%= link_to t('post.back_to'), posts_path %>
+      <% if current_user %>
+        <%= link_to t('post.edit'), edit_post_path(@post) %> |
+
+        <%= button_to t('post.delete'), @post, method: :delete %>
+      <% end %>
+
+    </div>
+
+  </div>
 </div>

@@ -1,0 +1,45 @@
+.limit-to-5-lines {
+  overflow: visible;
+  max-height: 7.5em; /* Adjust based on line height and desired number of lines */
+  line-height: 1.5em; /* Adjust based on line height */
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-line-clamp: 5; /* Adjust based on the desired number of lines */
+  -moz-line-clamp: 5;
+  box-orient: vertical;
+  white-space: normal; /* Revert to default white-space setting */
+  direction: rtl;
+  position: relative; /* Ensure position is set for the pseudo-element */
+}
+
+.truncate-after-5-lines {
+  overflow: hidden;
+  max-height: 7.5em; /* Adjust based on line height and desired number of lines */
+  line-height: 1.5em; /* Adjust based on line height */
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-line-clamp: 5; /* Adjust based on the desired number of lines */
+  -moz-line-clamp: 5;
+  box-orient: vertical;
+  white-space: normal; /* Revert to default white-space setting */
+  direction: rtl;
+  position: relative; /* Ensure position is set for the pseudo-element */
+}
+
+/* Apply gradient overlay for ellipsis */
+.truncate-after-5-lines::after {
+  content: "\2026"; /* Unicode character for ellipsis (...) */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-right: 5px; /* Adjust padding for spacing between text and ellipsis */
+  background-color: #fff; /* Ensure background matches parent background */
+}
+
+@media print {
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+}
