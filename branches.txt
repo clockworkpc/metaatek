@@ -1,5 +1,0 @@
-  20240318_docker_compose
-  20240320_docker_compose
-  20240327_ssl_certificates
-  codewithrails
-  unify_master_codewithrails
