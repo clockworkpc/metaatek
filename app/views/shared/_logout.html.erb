@@ -1,3 +1,1 @@
-<% if user_signed_in? %>
-  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-danger" %>
-<% end %>
+  <%= button_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn-lg btn-danger" %>

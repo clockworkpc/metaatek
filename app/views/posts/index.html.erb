@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <style>
-  .card-body {
-    max-height: calc(10 * 1.5em); /* Adjust as needed */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 10; /* Number of lines to show */
-    -webkit-box-orient: vertical;
-  }
+.card-body {
+  max-height: calc(10 * 1.5em); /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
 
 </style>
 
@@ -22,9 +22,9 @@
       <div class="col-md-6">
         <a href="<%= post_path(post) %>" class="card-link">
           <div class="card mb-3 no-page-break">
+            <h5 class="card-title" style="text-align: right;"><%= post.title %></h5>
             <div class="text-right card-body">
               <%= link_to post_path(post) do %>
-                <h5 class="card-title"><span><%= post.title %></h5>
               <% end %>
               <p id="post_content_<%= post.id %>" class="paleo-hebrew"><%= post.content %></p>
               <br>
