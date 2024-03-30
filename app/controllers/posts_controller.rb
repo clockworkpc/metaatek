@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = current_user&.posts || Post.where(public: true)
+    @posts = if params[:view_mode] == 'my_posts'
+               current_user.posts
+             else
+               Post.where(public: true)
+             end
   end
 
   # GET /posts/1 or /posts/1.json
@@ -66,6 +70,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :view_mode)
   end
 end
