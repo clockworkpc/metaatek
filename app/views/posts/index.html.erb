@@ -16,11 +16,13 @@
   <h1><%= t('post.all') %></h1>
   <%= link_to t('post.new'), new_post_path, class: "btn btn-primary" %>
 
- <!-- Bootstrap Toggle Buttons -->
-  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <%= link_to 'All Posts', posts_path, class: "btn btn-outline-dark #{'active' if params[:view_mode].blank?}", role: "button" %>
-    <%= link_to 'My Posts', posts_path(view_mode: 'my_posts'), class: "btn btn-outline-dark #{'active' if params[:view_mode] == 'my_posts'}", role: "button" %>
-  </div>
+  <% if current_user %>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <%= link_to 'All Posts', posts_path, class: "btn btn-outline-dark #{'active' if params[:view_mode].blank?}", role: "button" %>
+      <%= link_to 'My Posts', posts_path(view_mode: 'my_posts'), class: "btn btn-outline-dark #{'active' if params[:view_mode] == 'my_posts'}", role: "button" %>
+    </div>
+  <% end %>
+  <!-- Bootstrap Toggle Buttons -->
   <hr class="my-4">
 
 
