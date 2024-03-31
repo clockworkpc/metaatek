@@ -6,15 +6,22 @@
   </div>
 
   <div class="row">
-    <% if current_user %>
-      <div class="col-md-1 btn-lg"><%= link_to t('post.edit'), edit_post_path(@post) %></div>
-      <div class="col-md-1 btn-lg"><%= link_to t('post.delete'), @post, method: :delete %></div>
-    <% end %>
-    <div class="col-md-1 btn-lg"><%= link_to t('post.back_to'), posts_path %></div>
 
+    <% if current_user %>
+      <div class="col-sm-1">
+        <%= button_to t('post.edit'), edit_post_path(@post), type: "button",  class: "btn btn-outline-info" %>
+      </div>
+      <div class="col-sm-1">
+        <%= button_to t('post.destroy'), @post, method: :delete, type: "button",  class: "btn btn-outline-danger" %>
+      </div>
+    <% end %>
+
+    <div class="col-sm-1">
+      <%= button_to t('post.back_to'), posts_path, class: "btn btn-outline-primary", type: "button" %>
+    </div>
   </div>
 
-
 </div>
+
 
 
