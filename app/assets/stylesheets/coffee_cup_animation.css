@@ -1,0 +1,45 @@
+
+@keyframes emptyFillCup {
+  0% { height: 100%; background-color: #6B4E31; } /* Full cup */
+  50% { height: 0; background-color: #FFFFFF; } /* Empty cup */
+  100% { height: 100%; background-color: #6B4E31; } /* Full cup again */
+}
+
+.coffee-cup {
+  width: 100px;
+  height: 100px;
+  background-color: #6B4E31; /* Coffee color */
+  animation: emptyFillCup 10s infinite; /* Animation lasts 5 seconds and repeats indefinitely */
+}
+
+.coffee-cup-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 32px;
+  background-color: #6B4E31; /* Cup color */
+  border-radius: 0 0 12px 12px; /* Round bottom corners */
+}
+
+.coffee-cup-icon::before {
+  content: '';
+  position: absolute;
+  top: -8px; /* Adjust to place the steam appropriately */
+  left: 4px;
+  width: 2px;
+  height: 8px;
+  background-color: #DDD; /* Steam color */
+  border-radius: 50%;
+}
+
+.coffee-cup-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -6px; /* Adjust to place the handle to the right of the cup */
+  width: 12px;
+  height: 12px;
+  border: 2px solid #6B4E31; /* Handle color, match cup color */
+  border-radius: 50%;
+  border-bottom-color: transparent; /* Hide bottom part of the circle to form a handle */
+}

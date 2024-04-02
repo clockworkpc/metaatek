@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+docker compose run app rails assets:clobber &&
+docker compose run app rails assets:precompile &&
+docker compose restart app
